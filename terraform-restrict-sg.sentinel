@@ -4,6 +4,7 @@ disallowed_cidr_blocks = [
   "0.0.0.0/0",
 ]
 
+# Validate that no security group rules have the CIDR "0.0.0.0/0" for ingress rules
 main = rule {
   all tfplan.resources.aws_security_group as _, instances {
     all instances as _, sg {
