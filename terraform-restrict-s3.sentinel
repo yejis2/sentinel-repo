@@ -44,7 +44,7 @@ is_private = rule {
     validations["private"]
 }
 
-# ACL set to "Private" on S3 bucket
+# Require that all S3 buckets have acl set to "private"
 main = rule {
     is_private
 }
