@@ -1,4 +1,4 @@
-import "tfstate-functions" as state
+import "tfstate" as state
 
 # Forbidden IAM actions
 param forbidden_actions default ["cloudtrail:StopLogging*"]
