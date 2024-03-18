@@ -1,7 +1,8 @@
+import "tfstate"
 import "tfstate" as state
 
 find_datasources = func(type) {
-  datasources = filter state.resources as address, d {
+  datasources = filter tfstate.resources as address, d {
   	d.type is type and
   	d.mode is "data"
   }
