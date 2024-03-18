@@ -29,7 +29,7 @@ find_resources_from_plan = func(type) {
 param forbidden_actions default ["cloudtrail:StopLogging*"]
 
 # Get all IAM policy document data sources
-allIAMPolicyDocs = state.find_resources_from_plan("aws_iam_policy_document")
+allIAMPolicyDocs = find_resources_from_plan("aws_iam_policy_document")
 
 # Filter to IAM policy documents with violations
 validated = true
