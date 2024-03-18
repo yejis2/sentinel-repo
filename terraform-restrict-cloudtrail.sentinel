@@ -1,6 +1,6 @@
 import "tfplan"
 
-# Define parameters for the forbidden actions
+# Define the parameter for forbidden actions
 param forbidden_actions default ["cloudtrail:StopLogging*"]
 
 # Define the main rule to evaluate the Terraform plan
@@ -10,7 +10,6 @@ main = rule {
     changes   = tfplan.resource_changes
 
     # Iterate over the resource changes to identify forbidden actions
-    # Specifically, check for any resource changes related to AWS CloudTrail
     for_each changes as _, change {
         # Check if the resource is related to AWS CloudTrail
         if change.type == "aws_cloudtrail" {
@@ -29,11 +28,4 @@ main = rule {
 
     # No forbidden actions related to stopping CloudTrail logging were found
     return false
-}
-
-# Define the enforcement level for the main rule
-# This specifies how strictly the policy should be enforced (e.g., hard-mandatory, soft-mandatory, advisory)
-main_with_enforcement = rule {
-    main with
-        level = "hard-mandatory"
 }
