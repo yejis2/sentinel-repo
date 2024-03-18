@@ -55,7 +55,7 @@ for allIAMPolicyDocs as address, d {
 
 } // end for
 
-# Main rule
+# Enforces the forbidden actions related to stopping CloudTrail logging
 main = rule {
 	validated
 }
