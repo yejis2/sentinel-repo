@@ -33,7 +33,7 @@ find_blocks = func(parent, child) {
 forbidden_actions = ["cloudtrail:StopLogging*"]
 
 # Get all IAM policy document data sources
-allIAMPolicyDocs = find_dataresources("aws_iam_policy_document")
+allIAMPolicyDocs = find_datasources("aws_iam_policy_document")
 
 # Filter to IAM policy documents with violations
 validated = true
