@@ -1,4 +1,4 @@
-import "tfstate"
+import "tfstate/v2"
 import "tfstate" as state
 
 find_datasources = func(type) {
